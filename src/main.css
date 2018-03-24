@@ -1,0 +1,32 @@
+#social div {
+  display: inline-block;
+}
+address {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #DDD;
+}
+address iframe {
+  vertical-align: middle;
+}
+time {
+  margin-right: 0.5em;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, "Lucida Grande", Helvetica, Arial;
+}
+header, #content, address {
+  margin: 8px;
+}
+#content {
+  max-width: 900px;
+}
+#ifttt {
+  margin: 2em 1em;
+}
+#ifttt h2 {
+  color: #999;
+  font-size: 120%;
+}

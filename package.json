@@ -1,0 +1,39 @@
+{
+  "name": "long-weekends-ng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -e holidays -o misc.tokyoenvious.net -b master",
+    "postinstall": "git remote add misc.tokyoenvious.net git@github.com:motemen/misc.tokyoenvious.net"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mustache": "^0.8.30",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "gh-pages": "^1.1.0",
+    "jest": "^22.4.3",
+    "jest-puppeteer": "^2.2.2",
+    "puppeteer": "^1.2.0",
+    "style-loader": "^0.20.3",
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.8.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "long-weekends": "file:node-long-weekends",
+    "mustache": "^2.3.0"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  }
+}
