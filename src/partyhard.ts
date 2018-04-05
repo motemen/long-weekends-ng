@@ -15,7 +15,7 @@ interface Options {
   target?: HTMLElement;
 }
 
-export function doPartyHard({ tag = 'party hard gif', apiKey, interval = 10 * 1000, target = document.body }: Options): Promise<number> {
+export function doPartyHard({ tag = 'party hard gif', apiKey, interval = 10 * 1000, target = document.body }: Options): Promise<any> {
   return new Promise<string[]>((resolve, reject) => {
     const cb = `jsonp_doPartyHard_${Math.random().toString().substring(2)}`;
     (window as any)[cb] = (data: TumblrAPITaggedResponse) => {
