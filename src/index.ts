@@ -3,6 +3,8 @@ import * as Mustache from 'mustache';
 import { doPartyHard } from './partyhard';
 import './main.css';
 
+import './pwabuilder-sw-register';
+
 let today = new Date();
 
 if (/^#(\d{4})-(\d{2})-(\d{2})$/.test(location.hash)) {

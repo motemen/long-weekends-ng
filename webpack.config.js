@@ -3,10 +3,13 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: {
+    main: './src/index.ts',
+    'pwabuilder-sw': './src/pwabuilder-sw.js',
+  },
   context: path.resolve(__dirname),
   plugins: [
-    new CopyPlugin([ { from: './holidays.html', to: '.'} ])
+    new CopyPlugin([ '*.html', 'manifest.json' ])
   ],
   module: {
     rules: [
@@ -25,7 +28,7 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '',
   }
