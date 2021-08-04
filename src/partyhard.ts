@@ -41,7 +41,7 @@ export function doPartyHard({ tag = 'party hard gif', apiKey, interval = 10 * 10
     const script = document.createElement('script');
     script.setAttribute('src', `https://api.tumblr.com/v2/tagged?tag=${encodeURIComponent(tag)}&api_key=${encodeURIComponent(apiKey)}&callback=${cb}`)
     script.onerror = function (ev) {
-      reject(ev.message);
+      reject(ev);
     };
     document.body.appendChild(script);
     console.log('added script');
