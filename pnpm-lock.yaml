@@ -15,6 +15,9 @@ importers:
         specifier: ^4.1.0
         version: 4.2.0
     devDependencies:
+      '@playwright/test':
+        specifier: ^1.47.0
+        version: 1.47.0
       '@types/mustache':
         specifier: ^4.1.0
         version: 4.2.5
@@ -33,12 +36,18 @@ importers:
       jest-puppeteer:
         specifier: ^10.1.1
         version: 10.1.1(puppeteer@23.3.0(typescript@4.9.5))(typescript@4.9.5)
+      playwright:
+        specifier: ^1.47.0
+        version: 1.47.0
       puppeteer:
         specifier: ^23
         version: 23.3.0(typescript@4.9.5)
       style-loader:
         specifier: ^2.0.0
         version: 2.0.0(webpack@5.94.0(webpack-cli@4.10.0))
+      test:
+        specifier: link:@types/playwright/test
+        version: link:@types/playwright/test
       ts-loader:
         specifier: ^8.0.14
         version: 8.4.0(typescript@4.9.5)(webpack@5.94.0(webpack-cli@4.10.0))
@@ -346,6 +355,11 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@playwright/test@1.47.0':
+    resolution: {integrity: sha512-SgAdlSwYVpToI4e/IH19IHHWvoijAYH5hu2MWSXptRypLSnzj51PcGD+rsOXFayde4P9ZLi+loXVwArg6IUkCA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   '@puppeteer/browsers@2.4.0':
     resolution: {integrity: sha512-x8J1csfIygOwf6D6qUAZ0ASk3z63zPb7wkNeHRerCMh82qWKUrOgkuP005AJC8lDL6/evtXETGEJVcwykKT4/g==}
@@ -1403,6 +1417,11 @@ packages:
     os: [darwin]
     deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2446,6 +2465,16 @@ packages:
   pkg-dir@4.2.0:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
+
+  playwright-core@1.47.0:
+    resolution: {integrity: sha512-1DyHT8OqkcfCkYUD9zzUTfg7EfTd+6a8MkD/NWOvjo0u/SCNd5YmY/lJwFvUZOxJbWNds+ei7ic2+R/cRz/PDg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.47.0:
+    resolution: {integrity: sha512-jOWiRq2pdNAX/mwLiwFYnPHpEZ4rM+fRSQpRHwEwZlP2PUANvL3+aJOF/bvISMhFD30rqMxUB4RJx9aQbfh4Ww==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   portfinder@1.0.32:
     resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}
@@ -3759,6 +3788,10 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
+  '@playwright/test@1.47.0':
+    dependencies:
+      playwright: 1.47.0
+
   '@puppeteer/browsers@2.4.0':
     dependencies:
       debug: 4.3.7(supports-color@6.1.0)
@@ -4977,6 +5010,9 @@ snapshots:
       nan: 2.20.0
     optional: true
 
+  fsevents@2.3.2:
+    optional: true
+
   fsevents@2.3.3:
     optional: true
 
@@ -6189,6 +6225,14 @@ snapshots:
   pkg-dir@4.2.0:
     dependencies:
       find-up: 4.1.0
+
+  playwright-core@1.47.0: {}
+
+  playwright@1.47.0:
+    dependencies:
+      playwright-core: 1.47.0
+    optionalDependencies:
+      fsevents: 2.3.2
 
   portfinder@1.0.32(supports-color@6.1.0):
     dependencies:
