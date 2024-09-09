@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("2024-09-10", async ({ page }) => {
-  await page.goto("http://localhost:8080/holidays.html#2024-09-10");
+  await page.goto("/holidays.html#2024-09-10");
 
   const section1 = await page.waitForSelector("section");
   await expect(section1.textContent()).resolves.toMatch(
@@ -17,7 +17,7 @@ test("2024-09-10", async ({ page }) => {
 });
 
 test("有給チャンス 2025-02-01", async ({ page }) => {
-  await page.goto("http://localhost:8080/holidays.html#2025-02-01");
+  await page.goto("/holidays.html#2025-02-01");
 
   const section1 = await page.waitForSelector("section");
   await expect(section1.textContent()).resolves.toMatch(
@@ -33,7 +33,7 @@ test("有給チャンス 2025-02-01", async ({ page }) => {
 });
 
 test("no 雛祭り 2025-02-28", async ({ page }) => {
-  await page.goto("http://localhost:8080/holidays.html#2025-02-28");
+  await page.goto("/holidays.html#2025-02-28");
 
   const section1 = await page.waitForSelector("section");
   await expect(section1.textContent()).resolves.not.toContain("2025-03-03");

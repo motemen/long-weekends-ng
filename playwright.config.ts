@@ -1,15 +1,12 @@
 import { defineConfig } from "@playwright/test";
 
-export default defineConfig({
-  // Reporter to use
-  reporter: "html",
+const port = process.env.PORT ? parseInt(process.env.PORT) : 8080;
 
+export default defineConfig({
   timeout: 60 * 1000,
 
   webServer: {
-    command: "webpack-cli serve --mode development",
-    port: 8080,
-    stdout: "pipe",
-    stderr: "pipe",
+    command: `webpack-cli serve --mode development --port ${port}`,
+    port,
   },
 });
