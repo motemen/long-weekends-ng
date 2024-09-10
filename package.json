@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -e holidays -o misc.tokyoenvious.net -b master",
-    "postinstall": "git remote add misc.tokyoenvious.net git@github.com:motemen/misc.tokyoenvious.net; ( cd server && npm install ); ( cd node-long-weekends && npm install )"
+    "postinstall": "playwright install && git remote add misc.tokyoenvious.net git@github.com:motemen/misc.tokyoenvious.net; ( cd server && npm install ); ( cd node-long-weekends && npm install )"
   },
   "keywords": [],
   "author": "",
