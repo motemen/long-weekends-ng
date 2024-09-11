@@ -1,9 +1,7 @@
 import { longWeekends, fetchHolidayEvents } from "long-weekends";
-import * as Mustache from "mustache";
+import Mustache from "mustache";
 import { doPartyHard } from "./partyhard";
 import "./main.css";
-
-import "./pwabuilder-sw-register";
 
 let today = new Date();
 

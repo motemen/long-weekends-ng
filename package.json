@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "playwright test",
-    "start": "webpack-cli serve --mode development",
-    "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -e holidays -o misc.tokyoenvious.net -b master",
+    "start": "vite",
+    "build": "vite build",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist -e holidays -o misc.tokyoenvious.net -b master",
     "postinstall": "playwright install && git remote add misc.tokyoenvious.net git@github.com:motemen/misc.tokyoenvious.net; ( cd server && npm install ); ( cd node-long-weekends && npm install )"
   },
   "keywords": [],
@@ -17,18 +18,11 @@
   "devDependencies": {
     "@playwright/test": "^1.47.0",
     "@types/mustache": "^4.1.0",
-    "copy-webpack-plugin": "^12.0.2",
-    "css-loader": "^7.1.2",
     "gh-pages": "^6.1.1",
     "playwright": "^1.47.0",
-    "puppeteer": "^23",
-    "style-loader": "^4.0.0",
     "test": "link:@types/playwright/test",
-    "ts-loader": "^9.5.1",
     "typescript": "^5.6.2",
-    "webpack": "^5.15.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "vite": "^5.4.3"
   },
   "dependencies": {
     "long-weekends": "file:node-long-weekends",

@@ -6,7 +6,8 @@ export default defineConfig({
   timeout: 60 * 1000,
 
   webServer: {
-    command: `webpack-cli serve --mode development --port ${port}`,
+    command: `vite --port ${port}`,
     port,
+    stderr: "pipe",
   },
 });
